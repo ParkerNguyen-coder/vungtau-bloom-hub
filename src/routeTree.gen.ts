@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HoaChiaBuonRouteImport } from './routes/hoa-chia-buon'
+import { Route as HoaChucMungRouteImport } from './routes/hoa-chuc-mung'
+import { Route as HoaKhaiTruongRouteImport } from './routes/hoa-khai-truong'
+import { Route as HoaSinhNhatRouteImport } from './routes/hoa-sinh-nhat'
+import { Route as HoaSuKienRouteImport } from './routes/hoa-su-kien'
+import { Route as LienHeRouteImport } from './routes/lien-he'
+import { Route as VeChungToiRouteImport } from './routes/ve-chung-toi'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HoaChiaBuonRoute = HoaChiaBuonRouteImport.update({
+  id: '/hoa-chia-buon',
+  path: '/hoa-chia-buon',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoaChucMungRoute = HoaChucMungRouteImport.update({
+  id: '/hoa-chuc-mung',
+  path: '/hoa-chuc-mung',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoaKhaiTruongRoute = HoaKhaiTruongRouteImport.update({
+  id: '/hoa-khai-truong',
+  path: '/hoa-khai-truong',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoaSinhNhatRoute = HoaSinhNhatRouteImport.update({
+  id: '/hoa-sinh-nhat',
+  path: '/hoa-sinh-nhat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoaSuKienRoute = HoaSuKienRouteImport.update({
+  id: '/hoa-su-kien',
+  path: '/hoa-su-kien',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LienHeRoute = LienHeRouteImport.update({
+  id: '/lien-he',
+  path: '/lien-he',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VeChungToiRoute = VeChungToiRouteImport.update({
+  id: '/ve-chung-toi',
+  path: '/ve-chung-toi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/hoa-chia-buon': typeof HoaChiaBuonRoute
+  '/hoa-chuc-mung': typeof HoaChucMungRoute
+  '/hoa-khai-truong': typeof HoaKhaiTruongRoute
+  '/hoa-sinh-nhat': typeof HoaSinhNhatRoute
+  '/hoa-su-kien': typeof HoaSuKienRoute
+  '/lien-he': typeof LienHeRoute
+  '/ve-chung-toi': typeof VeChungToiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/hoa-chia-buon': typeof HoaChiaBuonRoute
+  '/hoa-chuc-mung': typeof HoaChucMungRoute
+  '/hoa-khai-truong': typeof HoaKhaiTruongRoute
+  '/hoa-sinh-nhat': typeof HoaSinhNhatRoute
+  '/hoa-su-kien': typeof HoaSuKienRoute
+  '/lien-he': typeof LienHeRoute
+  '/ve-chung-toi': typeof VeChungToiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/hoa-chia-buon': typeof HoaChiaBuonRoute
+  '/hoa-chuc-mung': typeof HoaChucMungRoute
+  '/hoa-khai-truong': typeof HoaKhaiTruongRoute
+  '/hoa-sinh-nhat': typeof HoaSinhNhatRoute
+  '/hoa-su-kien': typeof HoaSuKienRoute
+  '/lien-he': typeof LienHeRoute
+  '/ve-chung-toi': typeof VeChungToiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/hoa-chia-buon'
+    | '/hoa-chuc-mung'
+    | '/hoa-khai-truong'
+    | '/hoa-sinh-nhat'
+    | '/hoa-su-kien'
+    | '/lien-he'
+    | '/ve-chung-toi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/hoa-chia-buon'
+    | '/hoa-chuc-mung'
+    | '/hoa-khai-truong'
+    | '/hoa-sinh-nhat'
+    | '/hoa-su-kien'
+    | '/lien-he'
+    | '/ve-chung-toi'
+  id:
+    | '__root__'
+    | '/'
+    | '/hoa-chia-buon'
+    | '/hoa-chuc-mung'
+    | '/hoa-khai-truong'
+    | '/hoa-sinh-nhat'
+    | '/hoa-su-kien'
+    | '/lien-he'
+    | '/ve-chung-toi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HoaChiaBuonRoute: typeof HoaChiaBuonRoute
+  HoaChucMungRoute: typeof HoaChucMungRoute
+  HoaKhaiTruongRoute: typeof HoaKhaiTruongRoute
+  HoaSinhNhatRoute: typeof HoaSinhNhatRoute
+  HoaSuKienRoute: typeof HoaSuKienRoute
+  LienHeRoute: typeof LienHeRoute
+  VeChungToiRoute: typeof VeChungToiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hoa-chia-buon': {
+      id: '/hoa-chia-buon'
+      path: '/hoa-chia-buon'
+      fullPath: '/hoa-chia-buon'
+      preLoaderRoute: typeof HoaChiaBuonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hoa-chuc-mung': {
+      id: '/hoa-chuc-mung'
+      path: '/hoa-chuc-mung'
+      fullPath: '/hoa-chuc-mung'
+      preLoaderRoute: typeof HoaChucMungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hoa-khai-truong': {
+      id: '/hoa-khai-truong'
+      path: '/hoa-khai-truong'
+      fullPath: '/hoa-khai-truong'
+      preLoaderRoute: typeof HoaKhaiTruongRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hoa-sinh-nhat': {
+      id: '/hoa-sinh-nhat'
+      path: '/hoa-sinh-nhat'
+      fullPath: '/hoa-sinh-nhat'
+      preLoaderRoute: typeof HoaSinhNhatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hoa-su-kien': {
+      id: '/hoa-su-kien'
+      path: '/hoa-su-kien'
+      fullPath: '/hoa-su-kien'
+      preLoaderRoute: typeof HoaSuKienRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lien-he': {
+      id: '/lien-he'
+      path: '/lien-he'
+      fullPath: '/lien-he'
+      preLoaderRoute: typeof LienHeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ve-chung-toi': {
+      id: '/ve-chung-toi'
+      path: '/ve-chung-toi'
+      fullPath: '/ve-chung-toi'
+      preLoaderRoute: typeof VeChungToiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HoaChiaBuonRoute: HoaChiaBuonRoute,
+  HoaChucMungRoute: HoaChucMungRoute,
+  HoaKhaiTruongRoute: HoaKhaiTruongRoute,
+  HoaSinhNhatRoute: HoaSinhNhatRoute,
+  HoaSuKienRoute: HoaSuKienRoute,
+  LienHeRoute: LienHeRoute,
+  VeChungToiRoute: VeChungToiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
