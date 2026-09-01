@@ -70,7 +70,7 @@ export function LeadForm({ defaultOccasion }: { defaultOccasion?: string }) {
                   Họ và tên
                 </label>
                 <input id="name" name="name" className={field} autoComplete="name" required />
-                {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
+                {errors['name'] && <p className="mt-1 text-xs text-destructive">{errors['name']}</p>}
               </div>
               <div>
                 <label className={labelCls} htmlFor="phone">
@@ -85,7 +85,7 @@ export function LeadForm({ defaultOccasion }: { defaultOccasion?: string }) {
                   autoComplete="tel"
                   required
                 />
-                {errors.phone && <p className="mt-1 text-xs text-destructive">{errors.phone}</p>}
+                {errors['phone'] && <p className="mt-1 text-xs text-destructive">{errors['phone']}</p>}
               </div>
               <div>
                 <label className={labelCls} htmlFor="occasion">
